@@ -67,8 +67,9 @@ jobs:
       - name: Build frontend
         run: npm run build
         working-directory: systemutviklerskolen-todo-app-frontend/
-          - name: dotnet publish
-          run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        
+      - name: dotnet publish
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
           
       - name: Copy frontend to artifact
         run: cp -r systemutviklerskolen-todo-app-frontend/build ./myapp/todo-app-frontend
